@@ -1,13 +1,13 @@
 import 'user_model.dart';
 
 class Event {
-  String eventId;
+  String id;
   String name;
   String description;
   DateTime startDate;
   DateTime endDate;
   User host;
 
-  Event(this.eventId, this.name, this.description, this.startDate, this.endDate,
+  Event(this.id, this.name, this.description, this.startDate, this.endDate,
       this.host);
 }

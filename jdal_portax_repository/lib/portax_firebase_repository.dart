@@ -3,6 +3,7 @@ import 'package:jdal_portax_repository/extensions/map_extension.dart';
 import 'package:jdal_portax_repository/interface/repository.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:meta/meta.dart';
 
 class PortaxFirebaseRepository<TModel> extends Repository<TModel, TModel> {
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -17,16 +18,18 @@ class PortaxFirebaseRepository<TModel> extends Repository<TModel, TModel> {
         options: DefaultFirebaseOptions.currentPlatform);
   }
 
+  @mustBeOverridden
   TModel mapToModel(Map<String, dynamic> source) {
     throw UnimplementedError();
   }
 
+  @mustBeOverridden
   Map<String, dynamic> mapToJson(TModel source) {
     throw UnimplementedError();
   }
 
   @override
-  Future<List<TModel>> getAll() async {
+  Future<List<TModel>> getAllAsync() async {
     List<TModel> list = [];
     QuerySnapshot<Object?> query = await collectionReference.get();
     for (QueryDocumentSnapshot<Object?> item in query.docs) {

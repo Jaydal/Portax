@@ -42,11 +42,9 @@ class DataFetcher extends StatelessWidget {
   Future<String> getData() async {
     Metadata newMetadata =
         Metadata.create("type", 2.2, DateTime.now(), "location", "resolution");
-    Metadata created = await MetadataRepository().addAsync(newMetadata);
+    Metadata created = await MetadataRepository().createAsync(newMetadata);
 
-    // Metadata metadata = await MetadataRepository().getAsync(created.id);
-    // return metadata.toJson().toString();
-    var list = await MetadataRepository().getAll();
+    var list = await MetadataRepository().getAllAsync();
 
     return 'test';
   }

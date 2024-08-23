@@ -1,10 +1,10 @@
 import 'event_model.dart';
 
 class User {
-  String userId;
+  String id;
   String email;
   String nickName;
   List<Event> events;
 
-  User(this.userId, this.email, this.nickName, this.events);
+  User(this.id, this.email, this.nickName, this.events);
 }

@@ -1,11 +1,11 @@
 import 'metadata_model.dart';
 import 'user_model.dart';
 
-class MomentsModel {
-  String momentId;
+class Moments {
+  String id;
   String eventId;
   User momentMadeBy;
   Metadata metadata;
 
-  MomentsModel(this.momentId, this.eventId, this.momentMadeBy, this.metadata);
+  Moments(this.id, this.eventId, this.momentMadeBy, this.metadata);
 }
