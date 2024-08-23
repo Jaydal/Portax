@@ -1,0 +1,25 @@
+name: jdal_portax
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  jdal_portax_service:
+    path: ../jdal_portax_service
+  jdal_portax_repository_model:
+    path: ../jdal_portax_repository_model
+  jdal_portax_repository:
+    path: ../jdal_portax_repository
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
